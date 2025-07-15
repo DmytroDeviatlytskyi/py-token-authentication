@@ -1,5 +1,4 @@
-from django.urls import path, include
-from rest_framework import routers
+from django.urls import path
 
 from cinema.views import (
     GenreViewSet,
@@ -50,10 +49,10 @@ urlpatterns = [
     path("cinema_halls/", cinema_hall_list, name="cinemahall-list"),
     path("actors/", actor_list, name="actor-list"),
     path("movies/", movie_list, name="movie-list"),
-    path("movies/<int:pk>", movie_detail, name="movie-detail"),
+    path("movies/<int:pk>/", movie_detail, name="movie-detail"),
     path("movie_sessions/", movie_session_list, name="moviesession-list"),
     path(
-        "movie_sessions/<int:pk>",
+        "movie_sessions/<int:pk>/",
         movie_session_detail,
         name="moviesession-detail"
     ),
